@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+</head>
+<body>
+
+<h2>Transaction Dashboard</h2>
+
+<p>Total Transactions: <b th:text="${count}"></b></p>
+<p>Total Amount: ₹<b th:text="${totalAmount}"></b></p>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>User</th>
+    <th>Amount</th>
+    <th>Type</th>
+    <th>Date</th>
+  </tr>
+
+  <tr th:each="t : ${transactions}">
+    <td th:text="${t.transactionId}"></td>
+    <td th:text="${t.userName}"></td>
+    <td th:text="${t.amount}"></td>
+    <td th:text="${t.type}"></td>
+    <td th:text="${t.createdAt}"></td>
+  </tr>
+</table>
+
+</body>
+</html>
